@@ -42,4 +42,26 @@ btnPending.addEventListener("click", function () {
 });
 
 //////////////////////////////////////////////////////////
-// Changing Police Officer
+const userLC = localStorage.getItem("user");
+const tokenLC = localStorage.getItem("token");
+const userName = document.querySelector(".userName");
+const designation = document.querySelector(".designation");
+const logout = document.querySelector(".logout");
+let user;
+let token;
+if (userLC) {
+  user = JSON.parse(userLC);
+  userName.textContent = user.userName;
+  if (user.designation === "super_admin")
+    designation.textContent = "Senior Officer";
+} else {
+  window.location.replace("http://127.0.0.1:5500/client/index.html");
+}
+if (tokenLC) {
+  token = JSON.parse(tokenLC);
+  console.log(token);
+}
+
+logout.addEventListener("click", () => {
+  localStorage.clear();
+});

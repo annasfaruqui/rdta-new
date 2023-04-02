@@ -4,9 +4,11 @@ import { User } from "./model/User.js";
 import { Crime } from "./model/Crime.js";
 import { auth } from "./middlewares/auth.js";
 import { authenticateRole } from "./middlewares/authenticateRole.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send({ success: true, message: "API working" });

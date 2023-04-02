@@ -387,13 +387,16 @@
       <h2 class="modal__header">
         <span class="highlight">Police Login</span>
       </h2>
-      <form class="modal__form">
-        <label>User id</label>
-        <input type="text" />
+      <form class="modal__form loginForm">
+        <label>User Name</label>
+        <input type="text" name="userName" class="loginForm--input" required />
         <label>Password</label>
-        <input type="password" />
-        <label>Designation</label>
-        <input type="text" />
+        <input
+          type="password"
+          name="password"
+          class="loginForm--input"
+          required
+        />
         <button class="btn__white btn__cancel">Cancel</button>
         <button class="btn btn__login">Login</button>
       </form>
@@ -404,17 +407,31 @@
       <h2 class="modal__header">
         <span class="highlight">Report Drug Trafficking</span>
       </h2>
-      <form class="modal__form">
+      <form class="modal__form crimeForm">
         <label>Criminal Name</label>
-        <input type="text" />
+        <input name="criminalName" type="text" class="crimeForm--input" />
         <label>Criminal Age</label>
-        <input type="number" />
+        <input type="number" class="crimeForm--input" name="criminalAge" />
         <label>Suspected Location</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="suspectedLocation"
+          required
+          class="crimeForm--input"
+        />
         <label>Number of people involved</label>
-        <input type="number" />
+        <input
+          type="number"
+          required
+          name="involvedPeople"
+          class="crimeForm--input"
+        />
         <label>Submit your tip</label>
-        <textarea class="textarea"></textarea>
+        <textarea
+          class="textarea crimeForm--input"
+          name="tip"
+          required
+        ></textarea>
         <button class="btn__white btn__cancel">Cancel</button>
         <button class="btn btn__report">Report</button>
       </form>

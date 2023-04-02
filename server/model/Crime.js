@@ -11,13 +11,17 @@ const crimeSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  invlovedPeople: {
+  involvedPeople: {
     type: Number,
     required: true,
   },
   tip: {
     type: String,
     required: true,
+  },
+  isPending: {
+    type: Boolean,
+    default: true,
   },
 });
 

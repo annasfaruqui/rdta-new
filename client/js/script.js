@@ -267,7 +267,6 @@ const slider = function () {
   btnLeft.addEventListener("click", prevSlide);
 
   document.addEventListener("keydown", function (e) {
-    console.log(e);
     if (e.key === "ArrowLeft") prevSlide();
     if (e.key === "ArrowRight") nextSlide();
   });
@@ -281,3 +280,66 @@ const slider = function () {
   });
 };
 slider();
+
+///////////////////////////////////////////////////////
+const submitCrimeForm = document.querySelector(".crimeForm");
+const inputs = document.querySelectorAll(".crimeForm--input");
+submitCrimeForm.addEventListener("submit", e => {
+  e.preventDefault();
+  let reqObj = {};
+  inputs.forEach(input => {
+    reqObj[input.name] = input.value;
+  });
+  console.log(reqObj);
+  fetch("http://127.0.0.1:3000/reportCrime", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reqObj),
+  })
+    .then(response => {
+      if (!response.ok) {
+        alert("Something went wrong");
+      } else {
+        alert("Crime reported");
+      }
+    })
+    .catch(() => {
+      alert("Something went wrong");
+    });
+});
+
+////////////////LOGIN FORM///////////////////////
+const loginForm = document.querySelector(".loginForm");
+const loginFormInputs = document.querySelectorAll(".loginForm--input");
+loginForm.addEventListener("submit", e => {
+  e.preventDefault();
+  let reqObj = {};
+  loginFormInputs.forEach(input => {
+    reqObj[input.name] = input.value;
+  });
+  fetch("http://localhost:3000/login", {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reqObj),
+    method: "POST",
+  })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log("DATA", data);
+      if (!data.success) {
+        return alert(data?.message);
+      }
+      window.open("http://127.0.0.1:5500/client/pages/login.html");
+      localStorage.setItem("user", JSON.stringify(data?.user));
+      localStorage.setItem("authToken", JSON.stringify(data?.token));
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  console.log("Submit", reqObj);
+});

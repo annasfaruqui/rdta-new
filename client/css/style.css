@@ -688,6 +688,14 @@ h4 {
   border-radius: 0.5rem;
 }
 
+.textarea {
+  width: 100%;
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
 .modal__form button {
   /* grid-column: 1 / span 1; */
   /* width: max-content; */

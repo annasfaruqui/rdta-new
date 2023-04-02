@@ -132,12 +132,19 @@
   overflow: hidden;
 }
 
-th,
-td {
+/* .solved__table  */
+.solved__table tr {
   /* border: 1px solid #343a40; */
   padding: 1.6rem 2.4rem;
   text-align: center;
   width: 25% 55% 10% 10%;
+}
+
+/* .pending__table th, */
+.pending__table tr {
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  width: 50% 10% 10% 30%;
 }
 
 .solved__table-thead tr {

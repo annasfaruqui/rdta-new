@@ -3,7 +3,7 @@ import { User } from "../model/User.js";
 
 const init = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/rdta");
+    await mongoose.connect("mongodb://127.0.0.1:27017/rdta");
     console.log("Connected to database");
     await addSuperAdmin();
     console.log("Super admin added");

@@ -30,7 +30,7 @@ btnSolved.addEventListener("click", function () {
 
   pendingCrimes.classList.add("hidden");
   solvedCrimes.classList.remove("hidden");
-  solvedCrimes.animate(btnClickAnimation, 1000);
+  solvedCrimes.animate(btnClickAnimation, 500);
 });
 
 btnPending.addEventListener("click", function () {
@@ -38,7 +38,7 @@ btnPending.addEventListener("click", function () {
 
   solvedCrimes.classList.add("hidden");
   pendingCrimes.classList.remove("hidden");
-  pendingCrimes.animate(btnClickAnimation, 1000);
+  pendingCrimes.animate(btnClickAnimation, 500);
 });
 
 //////////////////////////////////////////////////////////

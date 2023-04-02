@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../imgs/img-logo-round.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login_style.css" />
+    <title>Anti-drug Peddling | Police login</title>
+
+    <script defer src="../js/login.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <img
+        src="../imgs/img-logo.png"
+        alt="Bankist logo"
+        class="nav__logo"
+        id="logo"
+      />
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link" href="#section--1">Features</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--2">Operations</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--3">Criminals</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn" href="../index.html">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="main__section">
+      <div class="police">
+        <div class="police__officer police__officer-1">
+          <img src="../imgs/img-police-1.jpg" />
+          <div class="officer__list">
+            <ul class="police__details">
+              <li class="police__detail"><span>Name: </span>Nick Gurr</li>
+              <li class="police__detail"><span>Age: </span>40</li>
+              <li class="police__detail">
+                <span>Designation: </span>Senior Officer
+              </li>
+              <li class="police__detail"><span>Cases worked on: </span>20</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="police__officer police__officer-2 hidden">
+          <img src="../imgs/img-police-2.jpg" />
+          <div class="officer__list">
+            <ul class="police__details">
+              <li class="police__detail"><span>Name: </span>Sarah Jane</li>
+              <li class="police__detail"><span>Age: </span>37</li>
+              <li class="police__detail">
+                <span>Designation: </span>Senior Officer
+              </li>
+              <li class="police__detail"><span>Cases worked on: </span>12</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="police__officer police__officer-3 hidden">
+          <img src="../imgs/img-police-3.jpg" />
+          <div class="officer__list">
+            <ul class="police__details">
+              <li class="police__detail"><span>Name: </span>Jim Miller</li>
+              <li class="police__detail"><span>Age: </span>44</li>
+              <li class="police__detail">
+                <span>Designation: </span>Senior Officer
+              </li>
+              <li class="police__detail"><span>Cases worked on: </span>30</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="police__officer police__officer-4 hidden">
+          <img src="../imgs/img-police-4.jpg" />
+          <div class="officer__list">
+            <ul class="police__details">
+              <li class="police__detail"><span>Name: </span>Nicolas Luis</li>
+              <li class="police__detail"><span>Age: </span>32</li>
+              <li class="police__detail">
+                <span>Designation: </span>Junior Officer
+              </li>
+              <li class="police__detail"><span>Cases worked on: </span>9</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="list-2">
+          <ul>
+            <li>
+              <button class="btn__police btn__solved">Solved Cases</button>
+            </li>
+            <li>
+              <button class="btn__police btn__pending">Pending Cases</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ////////////////////////////////////////////////////////// -->
+      <!--////////////////////// SOLVED CRIMES ///////////////////// -->
+      <!-- ////////////////////////////////////////////////////////// -->
+
+      <div class="crimes__solved">
+        <div class="section__title">
+          <h2 class="section__description">Solved Cases</h2>
+          <h3 class="section__header">
+            List of all the drug trafficking that have been taken care of
+          </h3>
+        </div>
+        <ul class="crimes__solved-list">
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Stolen Gauntlet Crime</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Manchester, England</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>07/08/2023</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Crazy Mofo Crime</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Madrid, Spain</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>08/08/2023</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Crime of Bahamanas Drugs</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Barcelona, Spain</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>09/08/2023</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">
+                    Underwater complicated drug trafficking operation
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Bengaluru, India</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>10/08/2023</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Killing two stones with one bird crime</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Karachi,, Pakistan</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>12/08/2023</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Local drug dealer Crime</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Dublin, Ireland</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>13/08/2023</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__solved">
+            <table class="solved__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="solved__table-thead">
+                <tr>
+                  <th colspan="4">Racist drug trafficker raid</th>
+                </tr>
+              </thead>
+              <tbody class="solved__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Istanbul, Turkey</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>15/08/2023</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ////////////////////////////////////////////////////////// -->
+      <!--////////////////////// PENDING CRIMES /////////////////////-->
+      <!-- ////////////////////////////////////////////////////////// -->
+
+      <div class="crimes__pending hidden">
+        <div class="section__title">
+          <h2 class="section__description">Pending Cases</h2>
+          <h3 class="section__header">
+            List of all reported drug trafficking cases that are yet to be taken
+            care of
+          </h3>
+        </div>
+        <ul class="crimes__pending-list">
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Stolen Gauntlet Crime</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Manchester, England</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>07/08/2023</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Crazy Mofo Crime</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Madrid, Spain</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>08/08/2023</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Crime of Bahamanas Drugs</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Barcelona, Spain</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>09/08/2023</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">
+                    Underwater complicated drug trafficking operation
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Bengaluru, India</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>10/08/2023</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Killing two stones with one bird crime</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Karachi,, Pakistan</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>12/08/2023</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Local drug dealer Crime</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Dublin, Ireland</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>13/08/2023</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="crime__pending">
+            <table class="pending__table">
+              <colgroup>
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 70%" />
+                <col span="1" style="width: 10%" />
+                <col span="1" style="width: 10%" />
+              </colgroup>
+              <thead class="pending__table-thead">
+                <tr>
+                  <th colspan="4">Racist drug trafficker raid</th>
+                </tr>
+              </thead>
+              <tbody class="pending__table-tbody">
+                <tr>
+                  <th>Location</th>
+                  <th>Details</th>
+                  <th>Date</th>
+                  <th>Officers Deployed</th>
+                </tr>
+                <tr>
+                  <td><p>Istanbul, Turkey</p></td>
+                  <td>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      In expedita quo explicabo nam ad modi, tempora tempore
+                      iste, accusamus sit repudiandae! Tempore nulla ex quaerat
+                      fuga molestiae temporibus repudiandae velit?
+                    </p>
+                  </td>
+                  <td>15/08/2023</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ////////////////////////////////////////////////////////// -->
+    <!--////////////////////// FOOTER /////////////////////-->
+    <!-- ////////////////////////////////////////////////////////// -->
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img src="../imgs/img-logo-round.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a class="footer__link" href="#">Anti-Drug Peddling</a>. All right
+        reserved 2023
+      </p>
+    </footer>
+  </body>
+</html>

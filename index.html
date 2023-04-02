@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,   initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="imgs/img-logo-round.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Anti-Drug Peddling</title>
+
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="imgs/img-logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Criminals</a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="https://www.legalserviceindia.com/legal/article-2839-drug-trafficking-in-india.html"
+              target="_blank"
+              >More info</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal-login" href="#"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <div class="header__box-1">
+          <h1>
+            Reporting
+            <!-- Blue highlight effect -->
+            <span class="highlight">Drug Trafficking</span>
+            <br />
+            <span class="highlight">Anonymously</span>
+          </h1>
+          <h4>Take a stand for a drug free land</h4>
+          <div class="btn__box">
+            <button class="btn btn--show-modal-report">Report Crime</button>
+            <button class="btn--text btn--scroll-to">
+              Learn more &DownArrow;
+            </button>
+          </div>
+        </div>
+        <!-- <div class="header__box-2">
+           <img
+            src="imgs/img-hero.jpg"
+            class="header__img"
+            alt="Minimalist bank items" 
+          />
+        </div> -->
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Features</h2>
+        <h3 class="section__header">
+          Everything you need to know about reporting anonymously
+        </h3>
+      </div>
+
+      <div class="features">
+        <img
+          src="imgs/anonymity-lazy.jpg"
+          data-src="imgs/anonymity.jpg"
+          alt="Computer"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Complete Anonymity</h5>
+          <p>
+            Users can have complete anonymity while reporting the illict use of
+            drugs, the people involved in it, and it's details
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">
+            No need to be present physically to file a report
+          </h5>
+          <p>
+            There is no need to be physically present to file a report of drug
+            trafficking. Users can report such cases in the comfort of their
+            homes
+          </p>
+        </div>
+        <img
+          src="imgs/reporting-lazy.jpg"
+          data-src="imgs/reporting.jpg"
+          alt="Plant"
+          class="features__img lazy-img"
+        />
+
+        <img
+          src="imgs/decline-drugs-lazy.jpg"
+          data-src="imgs/decline-drugs.jpg"
+          alt="Credit card"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-trending-down"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">
+            Help in declining drug trafficking cases
+          </h5>
+          <p>
+            Reporting any illicit drug trafficking activity will automatically
+            help in declining the number of drug trafficking cases
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Operations</h2>
+        <h3 class="section__header">
+          How we operate with the help of anonymous reports
+        </h3>
+      </div>
+
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="btn operations__tab operations__tab--1 operations__tab--active"
+            data-tab="1"
+          >
+            <span>01</span>Registration
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+            <span>02</span>Investigation
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+            <span>03</span>Taking Action
+          </button>
+        </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-clipboard"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Registration of the report in the nearest police station
+          </h5>
+          <p>
+            The anonymous report is evaluated and a case is registered in the
+            nearest police station of the area where the drug trafficking is
+            allegedly reported.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-search"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            The matter of the report is investigated
+          </h5>
+          <p>
+            The anonymous report is investigated by using any existing criminal
+            data and any previous records of criminal activity in the reported
+            areas, and also by investigating any suspects and evidences that
+            arise from the registered report.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-play-circle"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Commencement of Anti-Drug Trafficking Operation
+          </h5>
+          <p>
+            After all evaluations and investigations, A police raid operation
+            will be conducted at the reported area of the drug trafficking case
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title section__title--criminals">
+        <h2 class="section__description">Wanted Criminals</h2>
+        <h3 class="section__header">
+          Criminals that are on the run, possibly can be behind drug trafficking
+          orgainzations
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="criminal__section">
+            <img
+              src="imgs/img-criminal-1.jpg"
+              alt="Criminal 1"
+              class="criminal__image"
+            />
+            <div class="criminal__details">
+              <p class="criminal__detail">
+                <span class="highlight-2">Name: </span> Jonathan Buxley
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Age: </span>48
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Criminal cases: </span>4
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2"> Last seen: </span>Near National
+                Prefecture Park, Kyoto, Japan
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide--2">
+          <div class="criminal__section">
+            <img
+              src="imgs/img-criminal-2.jpg"
+              alt="Criminal 2"
+              class="criminal__image"
+            />
+            <div class="criminal__details">
+              <p class="criminal__detail">
+                <span class="highlight-2">Name: </span>Samatha Carlos
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Age: </span>35
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Criminal cases: </span>3
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2"> Last seen: </span>Near Etihad
+                Stadium, Manchester, England
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide--3">
+          <div class="criminal__section">
+            <img
+              src="imgs/img-criminal-3.jpg"
+              alt="Criminal 3"
+              class="criminal__image"
+            />
+            <div class="criminal__details">
+              <p class="criminal__detail">
+                <span class="highlight-2">Name: </span>Junior Dos Santos
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Age: </span>45
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Criminal cases: </span>12
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2"> Last seen: </span>Near Cristo
+                Redentor, Rio de Janeiro, Brazil
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide--4">
+          <div class="criminal__section">
+            <img
+              src="imgs/img-criminal-4.jpg"
+              alt="Criminal 4"
+              class="criminal__image"
+            />
+            <div class="criminal__details">
+              <p class="criminal__detail">
+                <span class="highlight-2">Name: </span>Mark Williams
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Age: </span>32
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2">Criminal cases: </span>7
+              </p>
+              <p class="criminal__detail">
+                <span class="highlight-2"> Last seen: </span>Near Cubbon Park,
+                Lalbagh Botanical Garden, Bangalore
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
+        <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
+        <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
+        <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div> -->
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">
+          Help us by contributing to the cause by reporting any illicit drug
+          traffickng activity you may notice
+        </h3>
+      </div>
+      <button class="btn btn--show-modal-report">Report Crime</button>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img src="imgs/img-logo-round.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a class="footer__link" href="#">Anti-Drug Peddling</a>. All right
+        reserved 2023
+      </p>
+    </footer>
+
+    <div class="modal__login hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        <span class="highlight">Police Login</span>
+      </h2>
+      <form class="modal__form">
+        <label>User id</label>
+        <input type="text" />
+        <label>Password</label>
+        <input type="password" />
+        <label>Designation</label>
+        <input type="text" />
+        <button class="btn__white btn__cancel">Cancel</button>
+        <button class="btn btn__login">Login</button>
+      </form>
+    </div>
+
+    <div class="modal__report hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        <span class="highlight">Report Drug Trafficking</span>
+      </h2>
+      <form class="modal__form">
+        <label>Criminal Name</label>
+        <input type="text" />
+        <label>Criminal Age</label>
+        <input type="number" />
+        <label>Suspected Location</label>
+        <input type="text" />
+        <label>Number of people involved</label>
+        <input type="number" />
+        <button class="btn__white btn__cancel">Cancel</button>
+        <button class="btn btn__report">Report</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

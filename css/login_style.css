@@ -1,0 +1,184 @@
+:root {
+  --color-primary: #2789f3;
+  --color-secondary: #38d9a9;
+  --color-tertiary: #9775fa;
+  --color-primary-darker: #1b60aa;
+  --color-secondary-darker: #2dae87;
+  --color-tertiary-darker: #6a52af;
+  --color-primary-lighter: #4f89c8;
+  --color-secondary-lighter: #60e1ba;
+  --color-tertiary-lighter: #ac91fb;
+  --color-primary-opacity: #278af371;
+  --color-secondary-opacity: #38d9a94d;
+  --color-tertiary-opacity: #9675fa6f;
+  --gradient-primary: linear-gradient(to top left, #52a1f5, #2789f3);
+  --gradient-secondary: linear-gradient(to top left, #2dae87, #60e1ba);
+}
+
+.main__section {
+  display: grid;
+  padding: 0;
+  height: 70rem;
+  grid-template-columns: 3fr 7fr;
+  border-bottom: 4px solid #888;
+}
+
+.police {
+  background-color: #2d2f31;
+  color: #eee;
+  grid-column: 1 / 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 2rem 4rem 0;
+}
+
+.police__officer {
+  border: 3px solid var(--color-primary-darker);
+}
+
+.police img {
+  height: 25rem;
+  width: 25rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary-darker);
+  margin-bottom: 1rem;
+}
+
+.officer__list {
+  margin-bottom: 0.4rem;
+}
+
+.police__details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.police__detail {
+  text-align: start;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.police__detail span {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.list-2 {
+  margin: auto 0 2rem;
+  width: 100%;
+}
+
+.list-2 ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn__police {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+
+  display: inline-block;
+  background-color: var(--color-primary-darker);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 1.2rem;
+}
+
+.crimes__solved,
+.crimes__pending {
+  background-color: #d7d7d7;
+  padding: 4rem;
+  overflow-y: scroll;
+}
+
+.crimes__solved-list,
+.crimes__pending-list {
+  margin-top: -4rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.crime {
+  text-align: start;
+}
+
+/* ///////////////////Crime list - table///////////////// */
+/* //// */
+
+.solved__table,
+.pending__table {
+  width: 95rem;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  width: 25% 55% 10% 10%;
+}
+
+.solved__table-thead tr {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+.pending__table-thead tr {
+  background-color: #dc2f2f;
+  color: #fff;
+}
+
+.solved__table-thead th,
+.pending__table-thead th {
+  /* width: 25%; */
+  /* text-align: center; */
+  padding: 2rem 1rem;
+}
+
+.solved__table-tbody tr th,
+.pending__table-tbody tr th {
+  /* text-align: center; */
+  padding: 0 1rem;
+}
+
+.solved__table-tbody tr td,
+.pending__table-tbody tr td {
+  font-size: 1.2rem;
+}
+
+.solved__table-tbody tr:first-child,
+.pending__table-tbody tr:first-child {
+  background-color: #c4c4c4;
+}
+
+.solved__table-tbody tr:nth-child(odd),
+.pending__table-tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.solved__table-tbody tr:nth-child(even),
+.pending__table-tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}

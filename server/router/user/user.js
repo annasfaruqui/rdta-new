@@ -1,5 +1,5 @@
 import express from "express";
-import { Crime } from "../model/Crime.js";
+import { Crime } from "../../model/Crime.js";
 const router = express.Router();
 
 router.post("/reportCrime", async (req, res) => {

@@ -1,31 +1,36 @@
 import mongoose from "mongoose";
 
-const crimeSchema = mongoose.Schema({
-  criminalName: {
-    type: String,
+const crimeSchema = mongoose.Schema(
+  {
+    criminalName: {
+      type: String,
+    },
+    criminalAge: {
+      type: Number,
+    },
+    suspectedLocation: {
+      type: String,
+      required: true,
+    },
+    involvedPeople: {
+      type: Number,
+      required: true,
+    },
+    tip: {
+      type: String,
+      required: true,
+    },
+    isPending: {
+      type: Boolean,
+      default: true,
+    },
+    imageUrl: {
+      type: String,
+    },
   },
-  criminalAge: {
-    type: Number,
-  },
-  suspectedLocation: {
-    type: String,
-    required: true,
-  },
-  involvedPeople: {
-    type: Number,
-    required: true,
-  },
-  tip: {
-    type: String,
-    required: true,
-  },
-  isPending: {
-    type: Boolean,
-    default: true,
-  },
-  imageUrl: {
-    type: String,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 export const Crime = mongoose.model("Crime", crimeSchema);

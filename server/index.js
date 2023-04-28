@@ -45,16 +45,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/reportCrime", async (req, res) => {
-  try {
-    const crime = new Crime(req.body);
-    await crime.save();
-    res.send({ success: true, message: "Tip submitted successfully" });
-  } catch (error) {
-    res.status(400).send({ success: false, message: error?.message });
-  }
-});
-
 app.get("/crimes", auth, async (req, res) => {
   try {
     const crimes = await Crime.find();
@@ -63,6 +53,10 @@ app.get("/crimes", auth, async (req, res) => {
     res.status(400).send({ success: false, message: error?.message });
   }
 });
+
+//////////////////USER ROUTES //////////////////
+import userRouter from "./router/user.js";
+app.use(userRouter);
 
 app.listen(3000, () => {
   console.log("Listening at ", 3000);

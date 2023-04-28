@@ -23,6 +23,9 @@ const crimeSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  imageUrl: {
+    type: String,
+  },
 });
 
 export const Crime = mongoose.model("Crime", crimeSchema);

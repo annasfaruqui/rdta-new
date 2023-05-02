@@ -247,6 +247,13 @@
 .user__credentials {
   margin-left: auto;
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user__credentials button span {
+  white-space: nowrap;
 }
 
 /* //////////////////////////////////////////////////// */
@@ -384,6 +391,7 @@
   border-radius: 10px;
   background-color: #fdfdfd;
   box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -481,4 +489,10 @@
 .username,
 .password {
   font-weight: 700;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

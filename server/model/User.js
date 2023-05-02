@@ -28,6 +28,7 @@ const userSchema = mongoose.Schema({
   },
   dateOfBirth: {
     type: String,
+    required: true,
   },
   tokens: [{ type: String }],
 });

@@ -45,9 +45,6 @@
             <a class="nav__link" href="#section--2">Users</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#section--3">Settings</a>
-          </li>
-          <li class="nav__item">
             <a
               class="nav__link nav__link--btn btn--show-modal-login logout"
               href="./../index.html"
@@ -70,7 +67,7 @@
           </div>
           <h2 class="admin__name">Jason Pimblett</h2>
           <div class="admin">
-            <div class="admin__details">
+            <!-- <div class="admin__details">
               <div class="admin__icon">
                 <svg>
                   <use xlink:href="../imgs/icons.svg#icon-check"></use>
@@ -80,7 +77,7 @@
                 35 cases solved
               </h5>
               <h4 class="admin__detail">Cases Solved</h4>
-            </div>
+            </div> -->
 
             <div class="admin__details">
               <div class="admin__icon">
@@ -115,7 +112,7 @@
                   <use xlink:href="../imgs/icons.svg#icon-users"></use>
                 </svg>
               </div>
-              <h5 class="user__detail-value">50</h5>
+              <h5 class="user__detail-value total__officers">50</h5>
               <h4 class="user__detail">Total Officers</h4>
             </div>
 
@@ -125,7 +122,7 @@
                   <use xlink:href="../imgs/icons.svg#icon-user-check"></use>
                 </svg>
               </div>
-              <h5 class="user__detail-value">20</h5>
+              <h5 class="user__detail-value total__senior__officers">20</h5>
               <h4 class="user__detail">Senior Officers</h4>
             </div>
 
@@ -135,82 +132,16 @@
                   <use xlink:href="../imgs/icons.svg#icon-check"></use>
                 </svg>
               </div>
-              <h5 class="user__detail-value">200</h5>
+              <h5 class="user__detail-value total__cases">200</h5>
               <h4 class="user__detail">Total Cases Solved</h4>
             </div>
           </div>
 
           <div class="user__summary">
             <h3 class="user__summary-description">List of Police Officers</h3>
-            <div class="user">
-              <div class="user__img">
-                <img src="../imgs/img-police-1.jpg" alt="Registered User" />
-              </div>
 
-              <div class="user__user">
-                <p class="user__name">
-                  Name: <span class="name">Nick Gurr</span>
-                </p>
-                <p class="user__designation">
-                  Designation: <span class="designation">Senior Officer</span>
-                </p>
-                <p class="user__age">Age: <span class="age">45</span></p>
-                <p class="user__cases">
-                  Cases Solved: <span class="cases">14</span>
-                </p>
-              </div>
+            <div class="users"></div>
 
-              <div class="user__credentials">
-                <button class="btn btn__admin">
-                  <div class="credentials__icon">
-                    <svg>
-                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
-                    </svg>
-                  </div>
-                  <span> View credentials </span>
-                </button>
-              </div>
-            </div>
-
-            <div class="user">
-              <div class="user__img">
-                <img src="../imgs/img-police-2.jpg" alt="Registered User" />
-              </div>
-
-              <div class="user__user">
-                <p class="user__name">
-                  Name: <span class="name">Sarah Jane</span>
-                </p>
-                <p class="user__designation">
-                  Designation: <span class="designation">Senior Officer</span>
-                </p>
-                <p class="user__age">Age: <span class="age">37</span></p>
-                <p class="user__cases">
-                  Cases Solved: <span class="cases">6</span>
-                </p>
-              </div>
-
-              <div class="user__credentials">
-                <button class="btn btn__admin">
-                  <div class="credentials__icon">
-                    <svg>
-                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
-                    </svg>
-                  </div>
-                  <span> View credentials </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="admin__dashboard settings__section" id="section--3">
-          <h2 class="settings__title">Settings</h2>
-          <h3 class="settings__description">
-            Add, Delete or Update Officers Data
-          </h3>
-
-          <div class="settings__heading">
             <div class="settings__details">
               <div class="settings__icon">
                 <svg>
@@ -218,49 +149,13 @@
                 </svg>
               </div>
               <div class="btn__settings-container">
-                <button class="btn btn__settings">
+                <button class="btn btn__settings btn__settings-add">
                   <div class="credentials__icon">
                     <svg>
                       <use xlink:href="../imgs/icons.svg#icon-info"></use>
                     </svg>
                   </div>
                   <span>Add Officers</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="settings__details">
-              <div class="settings__icon">
-                <svg>
-                  <use xlink:href="../imgs/icons.svg#icon-user-x"></use>
-                </svg>
-              </div>
-              <div class="btn__settings-container">
-                <button class="btn btn__settings">
-                  <div class="credentials__icon">
-                    <svg>
-                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
-                    </svg>
-                  </div>
-                  <span>Remove Officers</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="settings__details">
-              <div class="settings__icon">
-                <svg>
-                  <use xlink:href="../imgs/icons.svg#icon-edit"></use>
-                </svg>
-              </div>
-              <div class="btn__settings-container">
-                <button class="btn btn__settings">
-                  <div class="credentials__icon">
-                    <svg>
-                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
-                    </svg>
-                  </div>
-                  <span>Update Officer data</span>
                 </button>
               </div>
             </div>
@@ -310,9 +205,6 @@
             Designation: <span class="designation">Senior Officer</span>
           </p>
           <p class="officer__age">Age: <span class="age">45</span></p>
-          <p class="officer__cases">
-            Cases Solved: <span class="cases">14</span>
-          </p>
         </div>
 
         <div class="officer__credentials">
@@ -364,28 +256,7 @@
         <h2 class="modal__header">
           <span class="highlight-3">Add Officer</span>
         </h2>
-        <form class="modal__form adminForm">
-          <label>Officer Name</label>
-          <input
-            type="text"
-            name="officerName"
-            class="adminForm--input"
-            required
-          />
-          <label>Designation</label>
-          <input
-            type="text"
-            name="designation"
-            class="adminForm--input"
-            required
-          />
-          <label>Age</label>
-          <input type="text" name="age" class="adminForm--input" required />
-
-          <!-- check code -->
-          <label for="image">Photo</label>
-          <input type="image" name="photo" class="adminForm--input" required />
-
+        <form class="modal__form adminForm addOfficerForm">
           <label>User Name</label>
           <input
             type="text"
@@ -400,6 +271,24 @@
             class="adminForm--input"
             required
           />
+          <label>Designation</label>
+          <select class="adminForm--input" name="designation">
+            <option value="senior_officer">Senior Officer</option>
+            <option value="super_admin">Junior Officer</option>
+          </select>
+
+          <label>Date of birth</label>
+          <input
+            type="date"
+            name="dateOfBirth"
+            class="adminForm--input"
+            required
+          />
+
+          <!-- check code -->
+          <label for="avatar">Avatar url</label>
+          <input type="text" name="avatar" class="adminForm--input" />
+
           <button class="btn__white btn__cancel--admin">Cancel</button>
           <button class="btn btn__login--admin btn__login--admin-verify">
             Add
@@ -454,25 +343,27 @@
           <input
             type="text"
             name="officerName"
-            class="adminForm--input"
+            class="adminForm--input adminForm--input--officerName"
             required
           />
-          <label>New User Name</label>
-          <input type="text" name="userName" class="adminForm--input" />
 
           <label>New Designation</label>
+          <select class="adminForm--input adminForm--input--designation">
+            <option value="senior_officer">Senior Officer</option>
+            <option value="super_admin">Junior Officer</option>
+          </select>
+
+          <label for="image">Avatar url</label>
           <input
             type="text"
-            name="designation"
-            class="adminForm--input"
-            required
+            name="photo"
+            class="adminForm--input adminForm--input--avatar"
           />
 
-          <label for="image">New Photo</label>
-          <input type="image" name="photo" class="adminForm--input" />
-
           <button class="btn__white btn__cancel--admin">Cancel</button>
-          <button class="btn btn__login--admin btn__login--admin-verify">
+          <button
+            class="btn btn__login--admin btn__login--admin-verify btn-update-officer"
+          >
             Update
           </button>
         </form>

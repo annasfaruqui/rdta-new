@@ -8,7 +8,6 @@ const btnsCancel = document.querySelectorAll(".btn__cancel--admin");
 const btnAdmin = document.querySelectorAll(".btn__admin");
 const revealCredentials = document.querySelector(".reveal__credentials");
 
-const btnSettings = document.querySelectorAll(".btn__settings");
 const overlay = document.querySelector(".overlay");
 
 // ADMIN MODAL WINDOWS
@@ -22,7 +21,27 @@ const openModalRemoveUser = function () {
   overlay.classList.remove("hidden");
 };
 
-const openModalUpdateUser = function () {
+const officerName = document.querySelector(".adminForm--input--officerName");
+const officerDesignation = document.querySelector(
+  ".adminForm--input--designation"
+);
+const officerAvatar = document.querySelector(".adminForm--input--avatar");
+
+let officerId;
+
+const openModalUpdateUser = async function (e) {
+  //select inputs
+  const user = e.target.closest(".user");
+  if (user) {
+    const { userid, name: userName, designation, avatar } = user.dataset;
+
+    officerId = userid;
+
+    officerName.value = userName;
+    officerDesignation.value = designation;
+    officerAvatar.value = avatar;
+  }
+  // Show modal
   modalUpdateUser.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -43,10 +62,6 @@ const closeModal = function () {
 
 // OPening different Modal windows
 btnAdmin.forEach(btn => btn.addEventListener("click", openRevealCredentials));
-
-btnSettings[0].addEventListener("click", openModalAddUser);
-btnSettings[1].addEventListener("click", openModalRemoveUser);
-btnSettings[2].addEventListener("click", openModalUpdateUser);
 
 // Closing all types of modal windows
 btnsCloseModal.forEach(btn => btn.addEventListener("click", closeModal));
@@ -113,26 +128,267 @@ const stickyNav = function (entries) {
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  rootMargin: `-${navHeight}px`,
+  // rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
 
+// DATA MANIPULATION FNS
+
+const btnUpdateOfficer = document.querySelector(".btn-update-officer");
+const addOfficerForm = document.querySelector(".addOfficerForm");
+const totalOfficers = document.querySelector(".total__officers");
+const totalSeniorOfficers = document.querySelector(".total__senior__officers");
+
+btnUpdateOfficer.addEventListener("click", updateOfficer);
+addOfficerForm.addEventListener("submit", addOfficer);
+
+const fetchDetails = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/me", {
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      const data = await response.json();
+      const extraDetails = data?.extraDetails;
+      totalOfficers.textContent = `${extraDetails.totalOfficers} Officers`;
+      totalSeniorOfficers.textContent = `${extraDetails.totalSeniorOfficers} Officers`;
+      if (extraDetails) {
+        localStorage.setItem("extraDetails", JSON.stringify(extraDetails));
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+async function addOfficer(e) {
+  e.preventDefault();
+  const formData = new FormData(addOfficerForm);
+
+  const reqObj = {};
+
+  // iterate through entries...
+  for (let pair of formData.entries()) {
+    reqObj[pair[0]] = pair[1];
+  }
+
+  console.log(reqObj);
+
+  try {
+    const response = await fetch("http://localhost:3000/createUser", {
+      method: "POST",
+      body: JSON.stringify(reqObj),
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.user) {
+        officers.push(data.user);
+        fillOfficers();
+        fetchDetails();
+        closeModal();
+        alert("Officer added");
+      }
+    }
+  } catch (error) {
+    alert("Something went wrong");
+  }
+}
+
+async function updateOfficer(e) {
+  e.preventDefault();
+  const reqObj = {
+    userId: officerId,
+    userName: officerName.value,
+    designation: officerDesignation.value,
+    avatar: officerAvatar.value,
+  };
+  // DATA FROM FORM
+
+  try {
+    const response = await fetch("http://localhost:3000/editUser", {
+      method: "POST",
+      body: JSON.stringify(reqObj),
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      const newOfficers = officers.map(officer => {
+        const newOff = { ...officer };
+        newOff.userId = officerId;
+        if (officer._id === officerId) {
+          newOff.userName = reqObj.userName;
+          newOff.designation = reqObj.designation;
+          newOff.avatar = reqObj.avatar;
+          return newOff;
+        }
+        return officer;
+      });
+      officers = newOfficers;
+      fetchDetails();
+      fillOfficers();
+      closeModal();
+      alert("Officer updated");
+    }
+  } catch (error) {
+    alert("Something went wrong");
+  }
+}
+
+async function removeOfficer(e) {
+  const target = e.target;
+  const user = target.closest(".user");
+  const id = user.dataset.userid;
+
+  try {
+    const reqObj = {
+      userId: id,
+    };
+    const response = await fetch("http://localhost:3000/deleteUser", {
+      method: "POST",
+      body: JSON.stringify(reqObj),
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      officers = officers.filter(officer => officer._id !== id);
+      fetchDetails();
+      fillOfficers();
+    }
+  } catch (error) {
+    console.log("ERROR DELETEING USER ", error);
+  }
+}
+
 // DATA FILLING
+let officers = [];
+
+const generateOfficerItem = officer => {
+  const dob = officer.dateOfBirth;
+  const age = new Date().getFullYear() - new Date(dob).getFullYear();
+  return `
+  <div class="user" data-userId="${officer._id}" data-name="${
+    officer.userName
+  }" data-designation="${officer.designation}" data-avatar="${officer.avatar}">
+  <div class="user__img">
+    <img src="${
+      officer.avatar ? officer.avatar : "../imgs/person.png"
+    }" alt="Registered User" />
+  </div>
+
+  <div class="user__user">
+    <p class="user__name">
+      Name: <span class="name">${officer.userName}</span>
+    </p>
+    <p class="user__designation">
+      Designation: <span class="designation">${
+        officer.designation === "senior_officer"
+          ? "Senior Officer"
+          : "Junior Officer"
+      }</span>
+    </p>
+    <p class="user__age">Age: <span class="age">${age}</span></p>
+  </div>
+
+  <div class="user__credentials">
+    <button class="btn btn__settings btn__settings-update">
+      <span>Update Officer data</span>
+    </button>
+    <button class="btn btn__settings btn__settings-remove">
+      <span>Remove Officer</span>
+    </button>
+  </div>
+</div>
+  `;
+};
+
+const fillOfficers = () => {
+  const usersContainer = document.querySelector(".users");
+  usersContainer.innerHTML = "";
+
+  if (Array.isArray(officers)) {
+    officers.forEach(officer => {
+      usersContainer.insertAdjacentHTML(
+        "beforeend",
+        generateOfficerItem(officer)
+      );
+    });
+  }
+
+  const btnSettingsAdd = document.querySelectorAll(".btn__settings-add");
+  const btnSettingsRemove = document.querySelectorAll(".btn__settings-remove");
+  const btnSettingsUpdate = document.querySelectorAll(".btn__settings-update");
+
+  btnSettingsAdd.forEach(btn =>
+    btn.addEventListener("click", openModalAddUser)
+  );
+  btnSettingsRemove.forEach(btn =>
+    btn.addEventListener("click", removeOfficer)
+  );
+  btnSettingsUpdate.forEach(btn =>
+    btn.addEventListener("click", openModalUpdateUser)
+  );
+};
+
 const userLC = localStorage.getItem("user");
+const tokenLC = localStorage.getItem("authToken");
+const extraDetailsLC = localStorage.getItem("extraDetails");
+
+if (extraDetailsLC) {
+  const extraDetails = JSON.parse(extraDetailsLC);
+  console.log(extraDetails);
+
+  if (extraDetails.solvedCases) {
+    const solvedCases = document.querySelector(".total__cases");
+    solvedCases.textContent = `${extraDetails.solvedCases} Solved Cases`;
+  }
+
+  if (extraDetails.totalOfficers) {
+    totalOfficers.textContent = `${extraDetails.totalOfficers} Officers`;
+  }
+
+  if (extraDetails.totalSeniorOfficers) {
+    totalSeniorOfficers.textContent = `${extraDetails.totalSeniorOfficers} Officers`;
+  }
+
+  // RENDER OFFICERS
+  if (extraDetails.officers) {
+    officers = extraDetails.officers;
+    fillOfficers();
+  }
+}
 
 let user;
+let token;
 if (userLC) {
   user = JSON.parse(userLC);
   console.log(user);
   if (user) {
     const avatar = document.querySelector(".admin__img");
     const userName = document.querySelector(".admin__name");
-    // const casesSolved = document.querySelector(".admin__cases-solved");
-    // const designation = document.querySelector("");
+    const adminAge = document.querySelector(".admin__age");
 
     avatar.src = user.avatar;
     userName.textContent = user.userName;
+    const dob = user.dateOfBirth;
+    const age = new Date().getFullYear() - new Date(dob).getFullYear();
+    adminAge.textContent = `${age} Years`;
   }
+}
+if (tokenLC) {
+  token = JSON.parse(tokenLC);
+  fetchDetails();
 }
 
 //LOGOUT

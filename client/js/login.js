@@ -208,7 +208,7 @@ const fillCrimes = () => {
     if (crime.isPending) {
       const html = generateCrimeItem(crime, false);
       if (html) {
-        emptyList.remove();
+        // emptyList.remove();
         pendingCrimesList.insertAdjacentHTML("beforeend", html);
       }
     } else {

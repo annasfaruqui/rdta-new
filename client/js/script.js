@@ -355,6 +355,7 @@ loginForm.addEventListener("submit", e => {
       }
       localStorage.setItem("user", JSON.stringify(data?.user));
       localStorage.setItem("authToken", JSON.stringify(data?.token));
+      localStorage.setItem("extraDetails", JSON.stringify(data?.extraDetails));
       // clear form fields
       clearLoginFormInputs();
     })

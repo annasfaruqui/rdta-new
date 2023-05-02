@@ -19,9 +19,13 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/login_style.css" />
+
+    <!-- <link rel="stylesheet" href="../sass/main.css" /> -->
+
     <title>Anti-drug Peddling | Police login</title>
 
     <script defer src="../js/login.js"></script>
+    <script defer src="../js/validations/super-admin-validation.js"></script>
   </head>
   <body>
     <nav class="nav">
@@ -43,7 +47,7 @@
     <section class="main__section">
       <div class="police">
         <div class="police__officer police__officer-1">
-          <img src="../imgs/img-police-1.jpg" />
+          <img src="../imgs/person.png" class="police__officer--image" />
           <div class="officer__list">
             <ul class="police__details">
               <li class="police__detail">
@@ -121,7 +125,10 @@
             List of all the drug trafficking that have been taken care of
           </h3>
         </div>
-        <ul class="crimes__solved-list"></ul>
+
+        <ul class="crimes__solved-list">
+          <div class="empty__list-solved">No cases solved :)</div>
+        </ul>
       </div>
 
       <!-- ////////////////////////////////////////////////////////// -->
@@ -136,7 +143,9 @@
             care of
           </h3>
         </div>
-        <ul class="crimes__pending-list"></ul>
+        <ul class="crimes__pending-list">
+          <div class="empty__list-pending">No cases pending :)</div>
+        </ul>
       </div>
     </section>
 

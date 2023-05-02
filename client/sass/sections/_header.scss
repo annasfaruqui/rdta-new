@@ -1,0 +1,117 @@
+// Header/ Hero Section
+
+// @mixin background-image {
+//   background-image: linear-gradient(
+//       to right,
+//       rgba(0, 0, 0, 0.6),
+//       rgba(0, 0, 0, 0.6)
+//     ),
+//     url("../../imgs/img-hero.jpg");
+// }
+
+@mixin background-image($filter-color: rgba(0, 0, 0, 0.8)) {
+  background-image: linear-gradient(to top, $filter-color, $filter-color);
+}
+
+.header {
+  /* padding: 2rem 0; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__title {
+    flex: 1;
+    height: 75rem;
+
+    background-color: $color-secondary-opacity;
+    @include background-image;
+    background-size: cover;
+    background-position: top;
+
+    max-width: 100%;
+    padding: 0 5rem;
+    display: grid;
+    grid-template-columns: 95vw;
+    row-gap: 4rem;
+    align-content: center;
+    justify-content: center;
+
+    align-items: start;
+    justify-items: start;
+  }
+
+  &__box {
+    &-1 {
+      z-index: 2;
+      color: $color-grey-light-1;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      gap: 3rem;
+      padding: 5rem;
+    }
+
+    &-2 {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / span 4;
+    transform: translateY(-6rem);
+  }
+}
+
+// .header {
+// }
+
+// .header__title {
+// }
+
+// .header__box-1 {
+// }
+
+// .header-box-2 {
+// }
+
+// .header__img {
+// }
+
+h1 {
+  font-size: 5.5rem;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.highlight {
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    opacity: 0.7;
+    transform: scale(1.07, 1.05) skewX(-15deg);
+    background-image: $gradient-primary;
+  }
+}
+
+// .highlight {
+// }
+
+// .highlight::after {
+// }

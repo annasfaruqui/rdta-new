@@ -1,9 +1,5 @@
 import express from "express";
 import "./db/mongodb.js";
-import { User } from "./model/User.js";
-import { Crime } from "./model/Crime.js";
-import { auth } from "./middlewares/auth.js";
-import { authenticateRole } from "./middlewares/authenticateRole.js";
 import cors from "cors";
 
 const app = express();

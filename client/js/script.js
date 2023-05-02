@@ -6,7 +6,7 @@
 const modalLogin = document.querySelector(".modal__login");
 const modalReport = document.querySelector(".modal__report");
 const overlay = document.querySelector(".overlay");
-const btnsCloseModal = document.querySelectorAll(".btn--close-modal");
+const btnsCloseModal = document.querySelectorAll(".modal__close--btn");
 const btnsCancel = document.querySelectorAll(".btn__cancel");
 const btnsOpenModalReport = document.querySelectorAll(
   ".btn--show-modal-report"
@@ -39,6 +39,8 @@ const closeModal = function () {
   modalLogin.classList.add("hidden");
   modalReport.classList.add("hidden");
   overlay.classList.add("hidden");
+  clearLoginFormInputs();
+  clearSubmitFormInputs();
 };
 
 btnOpenModalLogin.addEventListener("click", openModalLogin);
@@ -48,9 +50,9 @@ btnsOpenModalReport.forEach(btn =>
 );
 
 btnsCloseModal.forEach(btn => btn.addEventListener("click", closeModal));
-overlay.addEventListener("click", closeModal);
-
 btnsCancel.forEach(btn => btn.addEventListener("click", closeModal));
+
+overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
@@ -144,7 +146,7 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 headerObserver.observe(header);
 
 //////////////////////////////////////////////////////////
-// REVEAL SECTIONS (SEE video & REFER Notes)
+// REVEAL SECTIONS
 
 const allSections = document.querySelectorAll(".section");
 
@@ -198,7 +200,7 @@ imgTargets.forEach(img => imgObserver.observe(img));
 //////////////////////////////////////////////////////////
 // SLIDER COMPONENT
 const slider = function () {
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll(".slider__slide");
   const btnLeft = document.querySelector(".slider__btn--left");
   const btnRight = document.querySelector(".slider__btn--right");
   const dotsContainer = document.querySelector(".dots");
@@ -284,6 +286,12 @@ slider();
 ///////////////////////////////////////////////////////
 const submitCrimeForm = document.querySelector(".crimeForm");
 const inputs = document.querySelectorAll(".crimeForm--input");
+const clearSubmitFormInputs = () => {
+  inputs.forEach(input => {
+    input.value = "";
+  });
+};
+
 submitCrimeForm.addEventListener("submit", e => {
   e.preventDefault();
   let reqObj = {};
@@ -302,6 +310,7 @@ submitCrimeForm.addEventListener("submit", e => {
       if (!response.ok) {
         alert("Something went wrong");
       } else {
+        clearSubmitFormInputs();
         alert("Crime reported");
       }
     })
@@ -313,6 +322,11 @@ submitCrimeForm.addEventListener("submit", e => {
 ////////////////LOGIN FORM///////////////////////
 const loginForm = document.querySelector(".loginForm");
 const loginFormInputs = document.querySelectorAll(".loginForm--input");
+const clearLoginFormInputs = () => {
+  loginFormInputs.forEach(input => {
+    input.value = "";
+  });
+};
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
   let reqObj = {};
@@ -334,12 +348,19 @@ loginForm.addEventListener("submit", e => {
       if (!data.success) {
         return alert(data?.message);
       }
-      window.open("http://127.0.0.1:5500/client/pages/login.html");
+      if (data?.user?.designation === "super_admin") {
+        window.open("http://127.0.0.1:5500/client/pages/login.html");
+      } else {
+        window.open("http://127.0.0.1:5500/client/pages/adminDashboard.html");
+      }
       localStorage.setItem("user", JSON.stringify(data?.user));
       localStorage.setItem("authToken", JSON.stringify(data?.token));
+      // clear form fields
+      clearLoginFormInputs();
     })
     .catch(error => {
       console.log(error);
     });
+
   console.log("Submit", reqObj);
 });

@@ -1,0 +1,70 @@
+.emergency {
+  width: 100%;
+  border-top: 1px solid $color-black;
+  border-bottom: 1px solid $color-black;
+  text-align: center;
+  font-size: 1.1rem;
+  color: $color-grey-light-1;
+  background-color: $color-grey-dark-3;
+
+  & strong {
+    font-size: 1.2rem;
+    color: $color-grey-light-2;
+  }
+
+  &__2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    color: $color-grey-light-1;
+    background-color: $color-grey-dark-3;
+    border-bottom: 1px solid $color-grey-dark-2;
+
+    & strong {
+      font-size: 2rem;
+      color: $color-white;
+    }
+
+    &-heading {
+      font-size: 2rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-family: inherit;
+      color: red;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+}
+
+// .emergency {
+// }
+
+// .emergency strong {
+// }
+
+// .emergency__2 {
+// }
+
+// .emergency__2 strong {
+// }
+
+// .emergency__2-heading {
+// }
+
+// .emergency__link:link,
+// .emergency__link:visited {
+// }
+
+// .emergency__link:hover,
+// .emergency__link:active {
+// }

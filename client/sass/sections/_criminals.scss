@@ -1,0 +1,41 @@
+.criminal {
+  &__section {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+    background-color: $color-white;
+    border: 3px solid $color-primary-lighter;
+    font-size: 1.8rem;
+    border-radius: 30px;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 30rem;
+    width: 25rem;
+    filter: grayscale(80%);
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  }
+}
+
+.highlight-2 {
+  font-weight: 900;
+  color: $color-grey-dark-2;
+}
+
+// .criminal__section {
+// }
+
+// .criminal__image {
+// }
+
+// .criminal__details {
+// }

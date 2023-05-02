@@ -5,13 +5,13 @@ import { authenticateRole } from "../../middlewares/authenticateRole.js";
 const router = express.Router();
 
 router.post(
-  "/editCrimeStatus",
+  "/crimeSolved",
   [auth, authenticateRole(["super_admin", "admin"])],
   async (req, res) => {
     try {
-      const { status, id } = req.body;
+      const { id } = req.body;
       if (!id) throw new Error("Please provide status and id");
-      await Crime.findByIdAndUpdate(id, { isPending: status });
+      await Crime.findByIdAndUpdate(id, { isPending: false });
       res.send({ success: true, message: "Status updated" });
     } catch (error) {
       res.status(400).send({ success: false, message: error?.message });

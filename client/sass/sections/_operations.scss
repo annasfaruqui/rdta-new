@@ -1,0 +1,163 @@
+/* OPERATIONS */
+.operations {
+  max-width: 100rem;
+  margin: 12rem auto 0 auto;
+
+  background-color: $color-white;
+
+  &__tab {
+    /* margin-right: 2.5rem; */
+    transform: translateY(-50%);
+
+    & span {
+      margin-right: 1rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    &--1 {
+      background-color: $color-secondary;
+
+      &:hover {
+        background-color: $color-secondary-darker;
+      }
+    }
+
+    &--3 {
+      background-color: $color-tertiary;
+      margin: 0;
+
+      &:hover {
+        background-color: $color-tertiary-darker;
+      }
+    }
+
+    &--active {
+      transform: translateY(-66%);
+    }
+  }
+
+  &__content {
+    display: none;
+
+    /* JUST PRESENTATIONAL */
+    font-size: 1.7rem;
+    padding: 2.5rem 7rem 6.5rem 7rem;
+
+    &--active {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      column-gap: 3rem;
+      row-gap: 0.5rem;
+    }
+
+    & p {
+      grid-column: 2;
+    }
+  }
+
+  &__header {
+    font-size: 2.25rem;
+    font-weight: 500;
+    align-self: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+
+    & svg {
+      height: 2.75rem;
+      width: 2.75rem;
+    }
+
+    &--1 {
+      background-color: $color-secondary-opacity;
+
+      & svg {
+        fill: $color-secondary-darker;
+      }
+    }
+
+    &--2 {
+      background-color: $color-primary-opacity;
+
+      & svg {
+        fill: $color-primary;
+      }
+    }
+
+    &--3 {
+      background-color: $color-tertiary-opacity;
+
+      & svg {
+        fill: $color-tertiary;
+      }
+    }
+  }
+}
+
+// .operations__tab-container {
+// }
+
+// .operations__tab {
+// }
+
+// .operations__tab span {
+// }
+
+// .operations__tab--1 {
+// }
+
+// .operations__tab--1:hover {
+// }
+
+// .operations__tab--3 {
+// }
+
+// .operations__tab--3:hover {
+// }
+
+// .operations__tab--active {
+// }
+
+// .operations__content {
+// }
+
+// .operations__content--active {
+// }
+
+// .operations__content p {
+// }
+
+// .operations__header {
+// }
+
+// .operations__icon {
+// }
+
+// .operations__icon svg {
+// }
+
+// .operations__icon--1 {
+// }
+// .operations__icon--2 {
+// }
+// .operations__icon--3 {
+// }
+// .operations__icon--1 svg {
+// }
+// .operations__icon--2 svg {
+// }
+// .operations__icon--3 svg {
+// }

@@ -1,0 +1,621 @@
+// ADMIN DASHBOARD //
+
+/////////////////////////////////////////////
+// General styles
+
+.card {
+  background-color: $color-white;
+  border-radius: 1rem;
+  box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/////////////////////////////////////////////
+// Admin section
+
+.section__admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin {
+  width: 75%;
+  flex-basis: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  &__dashboard {
+    padding: 2rem;
+    width: 100%;
+    font-size: 2.2rem;
+    border-top: 1px solid $color-grey-light-1;
+
+    transition: transform 1s, opacity 1s;
+  }
+
+  &__img {
+    margin-top: 3rem;
+    height: 31rem;
+    width: 35rem;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    color: $color-grey-dark-2;
+  }
+
+  &__details {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary-opacity;
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+
+    & svg {
+      height: 3.5rem;
+      width: 3.5rem;
+      fill: $color-primary;
+    }
+  }
+
+  &__detail {
+    color: $color-grey-dark-2;
+    font-size: 1.6rem;
+    font-weight: 800;
+
+    &-value {
+      font-size: 2rem;
+      padding: 1.2rem;
+      color: $color-primary-lighter;
+    }
+  }
+}
+
+// .admin__dashboard {
+// }
+
+// .admin__img {
+// }
+
+// .admin__name {
+// }
+
+// .admin {
+// }
+
+// .admin__details {
+// }
+
+// .admin__icon {
+// }
+
+// .admin__icon svg {
+// }
+
+// .admin__detail-value {
+// }
+
+// .admin__detail {
+// }
+
+/////////////////////////////////////////////
+// User section
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border: 2px solid $color-secondary-lighter;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    align-self: center;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    font-size: 3rem;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  &__details {
+    width: 55%;
+    padding: 2.2rem;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.2);
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    column-gap: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 3px 7px 10px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__icon {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+    height: 9rem;
+    width: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid $color-secondary;
+    border-radius: 50%;
+
+    & svg {
+      height: 5rem;
+      width: 5rem;
+      fill: $color-secondary;
+    }
+  }
+
+  &__detail {
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    &-value {
+      font-size: 2.4rem;
+      color: $color-secondary;
+    }
+
+    &,
+    &-value {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-description {
+      align-self: center;
+      margin-bottom: 2rem;
+      font-size: 2.6rem;
+    }
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+    margin: 1rem;
+    border: 2px solid $color-secondary-lighter;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+  }
+
+  &__name,
+  &__designation,
+  &__age,
+  &__cases {
+    font-weight: 400;
+  }
+
+  &__credentials {
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+}
+
+.name,
+.designation,
+.age,
+.cases {
+  font-weight: 800;
+}
+
+// .user__section {
+// }
+
+// .user__title {
+// }
+
+// .user__heading {
+// }
+
+// .user__details {
+// }
+
+// .user__details:hover {
+// }
+
+// .user__icon {
+// }
+
+// .user__icon svg {
+// }
+
+// .user__detail,
+// .user__detail-value {
+// }
+
+// .user__detail {
+// }
+
+// .user__detail-value {
+// }
+
+// .user__summary {
+// }
+
+// .user__summary-description {
+// }
+
+// .user {
+// }
+
+// .user:hover {
+// }
+
+// .user__img {
+// }
+
+// .user__img img {
+// }
+
+// .user__user {
+// }
+
+// .user__name,
+// .user__designation,
+// .user__age,
+// .user__cases {
+// }
+
+// .user__credentials {
+// }
+
+/////////////////////////////////////////////
+// Settings section
+
+.settings {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    align-self: center;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    font-size: 3rem;
+  }
+
+  &__description {
+    align-self: center;
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  &__details {
+    width: 55%;
+    padding: 2.2rem;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 3px 7px 10px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__icon {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+    height: 9rem;
+    width: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid $color-secondary;
+    border-radius: 50%;
+
+    & svg {
+      height: 5rem;
+      width: 5rem;
+      fill: $color-secondary;
+    }
+  }
+}
+
+// .settings__section {
+// }
+
+// .settings__title {
+// }
+
+// .settings__description {
+// }
+
+// .settings__heading {
+// }
+
+// .settings__details {
+// }
+
+// .settings__details:hover {
+// }
+
+// .settings__icon {
+// }
+
+// .settings__icon svg {
+// }
+
+/////////////////////////////////////////////
+// Reveal Credentials
+
+.reveal__credentials {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+
+  padding: 1rem;
+  width: 100rem;
+  max-height: 35rem;
+  background-color: #fafafa;
+  border-radius: 10px;
+  border: 1px solid $color-primary;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section__officer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  & .modeal__close--btn {
+    color: $color-primary-darker;
+  }
+}
+
+.officer {
+  font-size: 1.8rem;
+
+  &__img {
+    margin: 1rem;
+    margin-left: 2rem;
+    height: 25rem;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border: 2px solid $color-primary;
+      border-radius: 50%;
+    }
+  }
+
+  &__credentials {
+    margin-left: auto;
+    margin-right: 3rem;
+    font-size: 1.6rem;
+  }
+}
+
+// HERE SOME PARTS ARE CONNECTED IN A VERY UNRELATED MANNER(i.e., they have very low or 0 relationships in HTML)
+.credentials {
+  font-size: 4rem;
+  color: $color-primary;
+  margin: none;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    border: $color-secondary-darker;
+    background-color: $color-secondary-opacity;
+  }
+
+  & svg {
+    height: 3rem;
+    width: 3rem;
+    fill: $color-secondary-darker;
+  }
+}
+
+.username,
+.password {
+  font-weight: 700;
+}
+
+// .section__officer .modal__close--btn {
+// }
+
+// .officer__img {
+// }
+
+// .officer__img img {
+// }
+
+// .officer {
+// }
+
+// .officer__credentials {
+// }
+
+/////////////////////////////////////////////
+// Buttons, etc
+
+.btn {
+  &__admin {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: $color-secondary;
+    padding: 1.25rem 2.5rem;
+
+    :hover {
+      background-color: $color-secondary-darker;
+    }
+  }
+
+  &__login--admin {
+    &:hover {
+      background-color: $color-secondary-darker;
+    }
+  }
+
+  &__cancel--admin {
+    box-shadow: inset 0 0 0 2px $color-secondary-lighter;
+  }
+
+  &__settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: $color-secondary;
+    padding: 1.25rem 2.5rem;
+    width: 100%;
+
+    &:hover {
+      background-color: $color-secondary-darker;
+    }
+
+    &-container {
+      width: 65%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+// .btn__admin:hover,
+// .btn__login--admin:hover {
+// }
+
+// .btn__cancel--admin {
+// }
+
+// .btn__settings-container {
+// }
+
+// .btn__settings {
+// }
+
+// .btn__settings:hover {
+// }
+
+// .modal__admin .btn__login--admin {
+// }
+
+.modal__admin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: #f3f3f3;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+  border-radius: 5px;
+
+  & .btn__login--admin {
+    width: 15rem;
+    background-color: $color-secondary;
+    padding: 1.25rem 4.5rem;
+  }
+}
+
+.highlight-3 {
+  position: relative;
+}
+
+.highlight-3::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  opacity: 0.7;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-image: $gradient-secondary;
+}

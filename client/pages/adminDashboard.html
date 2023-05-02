@@ -16,35 +16,468 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/adminDashboard.css" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/adminDashboard_style.css" />
+
+    <!-- <link rel="stylesheet" href="../sass/main.css" /> -->
+
+    <script defer src="../js/admin.js"></script>
+    <script defer src="../js/validations/super-officer-validation.js"></script>
+
     <title>Admin Dashboard</title>
   </head>
 
   <body>
     <header>
-      <h1>Admin Dashboard</h1>
+      <nav class="nav">
+        <img
+          src="../imgs/img-logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Dashboard</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Users</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link nav__link--btn btn--show-modal-login logout"
+              href="./../index.html"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Users</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </nav>
-    <section>
+
+    <section class="admin__dashboard">
       <div class="card">
-        <h2>Dashboard</h2>
-        <p>Welcome to the admin dashboard.</p>
-      </div>
-      <div class="card">
-        <h2>Users</h2>
-        <p>View and manage user accounts.</p>
-      </div>
-      <div class="card">
-        <h2>Settings</h2>
-        <p>Update your account settings.</p>
+        <div class="section__admin" id="section--1">
+          <div class="admin__img-box">
+            <img
+              src="https://drive.google.com/uc?export=download&id=1WHSY2ADUNWPBj3IeEHZoPkuC6LQPLeMQ"
+              alt="Admin Profile Photo"
+              class="admin__img"
+            />
+          </div>
+          <h2 class="admin__name">Jason Pimblett</h2>
+          <div class="admin">
+            <div class="admin__details">
+              <div class="admin__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-check"></use>
+                </svg>
+              </div>
+              <h5 class="admin__detail-value admin__cases-solved">
+                35 cases solved
+              </h5>
+              <h4 class="admin__detail">Cases Solved</h4>
+            </div>
+
+            <div class="admin__details">
+              <div class="admin__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-user"></use>
+                </svg>
+              </div>
+              <h5 class="admin__detail-value designation">
+                Super Senior Officer
+              </h5>
+              <h4 class="admin__detail">Job Title</h4>
+            </div>
+
+            <div class="admin__details">
+              <div class="admin__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-calendar"></use>
+                </svg>
+              </div>
+              <h5 class="admin__detail-value admin__age">62 years</h5>
+              <h4 class="admin__detail">Age</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin__dashboard user__section" id="section--2">
+          <h2 class="user__title">Officers Info</h2>
+          <div class="user__heading">
+            <div class="user__details">
+              <div class="user__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-users"></use>
+                </svg>
+              </div>
+              <h5 class="user__detail-value">50</h5>
+              <h4 class="user__detail">Total Officers</h4>
+            </div>
+
+            <div class="user__details">
+              <div class="user__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-user-check"></use>
+                </svg>
+              </div>
+              <h5 class="user__detail-value">20</h5>
+              <h4 class="user__detail">Senior Officers</h4>
+            </div>
+
+            <div class="user__details">
+              <div class="user__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-check"></use>
+                </svg>
+              </div>
+              <h5 class="user__detail-value">200</h5>
+              <h4 class="user__detail">Total Cases Solved</h4>
+            </div>
+          </div>
+
+          <div class="user__summary">
+            <h3 class="user__summary-description">List of Police Officers</h3>
+            <div class="user">
+              <div class="user__img">
+                <img src="../imgs/img-police-1.jpg" alt="Registered User" />
+              </div>
+
+              <div class="user__user">
+                <p class="user__name">
+                  Name: <span class="name">Nick Gurr</span>
+                </p>
+                <p class="user__designation">
+                  Designation: <span class="designation">Senior Officer</span>
+                </p>
+                <p class="user__age">Age: <span class="age">45</span></p>
+                <p class="user__cases">
+                  Cases Solved: <span class="cases">14</span>
+                </p>
+              </div>
+
+              <div class="user__credentials">
+                <button class="btn btn__admin">
+                  <div class="credentials__icon">
+                    <svg>
+                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
+                    </svg>
+                  </div>
+                  <span> View credentials </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="user">
+              <div class="user__img">
+                <img src="../imgs/img-police-2.jpg" alt="Registered User" />
+              </div>
+
+              <div class="user__user">
+                <p class="user__name">
+                  Name: <span class="name">Sarah Jane</span>
+                </p>
+                <p class="user__designation">
+                  Designation: <span class="designation">Senior Officer</span>
+                </p>
+                <p class="user__age">Age: <span class="age">37</span></p>
+                <p class="user__cases">
+                  Cases Solved: <span class="cases">6</span>
+                </p>
+              </div>
+
+              <div class="user__credentials">
+                <button class="btn btn__admin">
+                  <div class="credentials__icon">
+                    <svg>
+                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
+                    </svg>
+                  </div>
+                  <span> View credentials </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin__dashboard settings__section" id="section--3">
+          <h2 class="settings__title">Settings</h2>
+          <h3 class="settings__description">
+            Add, Delete or Update Officers Data
+          </h3>
+
+          <div class="settings__heading">
+            <div class="settings__details">
+              <div class="settings__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-user-plus"></use>
+                </svg>
+              </div>
+              <div class="btn__settings-container">
+                <button class="btn btn__settings">
+                  <div class="credentials__icon">
+                    <svg>
+                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
+                    </svg>
+                  </div>
+                  <span>Add Officers</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="settings__details">
+              <div class="settings__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-user-x"></use>
+                </svg>
+              </div>
+              <div class="btn__settings-container">
+                <button class="btn btn__settings">
+                  <div class="credentials__icon">
+                    <svg>
+                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
+                    </svg>
+                  </div>
+                  <span>Remove Officers</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="settings__details">
+              <div class="settings__icon">
+                <svg>
+                  <use xlink:href="../imgs/icons.svg#icon-edit"></use>
+                </svg>
+              </div>
+              <div class="btn__settings-container">
+                <button class="btn btn__settings">
+                  <div class="credentials__icon">
+                    <svg>
+                      <use xlink:href="../imgs/icons.svg#icon-info"></use>
+                    </svg>
+                  </div>
+                  <span>Update Officer data</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img src="../imgs/img-logo-round.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a class="footer__link" href="#">Anti-Drug Peddling</a>. All right
+        reserved 2023
+      </p>
+    </footer>
+
+    <!-- Reveal credentials of users upon admin verification -->
+    <section class="reveal__credentials hidden">
+      <div class="section__officer" id="section--1">
+        <button class="modal__close--btn">&times;</button>
+        <div class="officer__img">
+          <img src="../imgs/img-police-1.jpg" alt="Registered Officer" />
+        </div>
+
+        <div class="officer">
+          <h2 class="credentials">Officer Details</h2>
+          <p class="officer__name">Name: <span class="name">Nick Gurr</span></p>
+          <p class="officer__designation">
+            Designation: <span class="designation">Senior Officer</span>
+          </p>
+          <p class="officer__age">Age: <span class="age">45</span></p>
+          <p class="officer__cases">
+            Cases Solved: <span class="cases">14</span>
+          </p>
+        </div>
+
+        <div class="officer__credentials">
+          <h2 class="credentials">Credentials</h2>
+          <p class="officer__username">
+            User Name: <span class="username">nickgurr</span>
+          </p>
+          <p class="officer__password">
+            Password: <span class="password">12121212</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- /////////////////////////////////////////////////////////////// -->
+    <!-- ALL MODALS -->
+    <section class="modal">
+      <!-- Verify Admin (Fire on "View Credentials" and setting opertions i.e "add, delete, update")-->
+      <div class="modal__admin hidden">
+        <button class="modal__close--btn">&times;</button>
+        <h2 class="modal__header">
+          <span class="highlight-3">Admin Verification</span>
+        </h2>
+        <form class="modal__form adminForm">
+          <label>User Name</label>
+          <input
+            type="text"
+            name="userName"
+            class="adminForm--input"
+            required
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            class="adminForm--input"
+            required
+          />
+          <button class="btn__white btn__cancel--admin">Cancel</button>
+          <button class="btn btn__login--admin">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="settings__change">
+      <!-- Add new Officer -->
+      <div class="modal__admin modal__add-user hidden">
+        <button class="modal__close--btn">&times;</button>
+        <h2 class="modal__header">
+          <span class="highlight-3">Add Officer</span>
+        </h2>
+        <form class="modal__form adminForm">
+          <label>Officer Name</label>
+          <input
+            type="text"
+            name="officerName"
+            class="adminForm--input"
+            required
+          />
+          <label>Designation</label>
+          <input
+            type="text"
+            name="designation"
+            class="adminForm--input"
+            required
+          />
+          <label>Age</label>
+          <input type="text" name="age" class="adminForm--input" required />
+
+          <!-- check code -->
+          <label for="image">Photo</label>
+          <input type="image" name="photo" class="adminForm--input" required />
+
+          <label>User Name</label>
+          <input
+            type="text"
+            name="userName"
+            class="adminForm--input"
+            required
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            class="adminForm--input"
+            required
+          />
+          <button class="btn__white btn__cancel--admin">Cancel</button>
+          <button class="btn btn__login--admin btn__login--admin-verify">
+            Add
+          </button>
+        </form>
+      </div>
+
+      <!-- Delete existing officer -->
+      <div class="modal__admin modal__delete-user hidden">
+        <button class="modal__close--btn">&times;</button>
+        <h2 class="modal__header">
+          <span class="highlight-3">Remove Officer</span>
+        </h2>
+        <form class="modal__form adminForm">
+          <label>Officer Name</label>
+          <input
+            type="text"
+            name="officerName"
+            class="adminForm--input"
+            required
+          />
+          <label>Designation</label>
+          <input
+            type="text"
+            name="designation"
+            class="adminForm--input"
+            required
+          />
+          <label>User Name</label>
+          <input
+            type="text"
+            name="userName"
+            class="adminForm--input"
+            required
+          />
+
+          <button class="btn__white btn__cancel--admin">Cancel</button>
+          <button class="btn btn__login--admin btn__login--admin-verify">
+            Remove
+          </button>
+        </form>
+      </div>
+
+      <!-- Update existing offficer details -->
+      <div class="modal__admin modal__update-user hidden">
+        <button class="modal__close--btn">&times;</button>
+        <h2 class="modal__header">
+          <span class="highlight-3">Update Officer Data</span>
+        </h2>
+        <form class="modal__form adminForm">
+          <label>Officer Name</label>
+          <input
+            type="text"
+            name="officerName"
+            class="adminForm--input"
+            required
+          />
+          <label>New User Name</label>
+          <input type="text" name="userName" class="adminForm--input" />
+
+          <label>New Designation</label>
+          <input
+            type="text"
+            name="designation"
+            class="adminForm--input"
+            required
+          />
+
+          <label for="image">New Photo</label>
+          <input type="image" name="photo" class="adminForm--input" />
+
+          <button class="btn__white btn__cancel--admin">Cancel</button>
+          <button class="btn btn__login--admin btn__login--admin-verify">
+            Update
+          </button>
+        </form>
+      </div>
+    </section>
+    <div class="overlay hidden"></div>
   </body>
 </html>

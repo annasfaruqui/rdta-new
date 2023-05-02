@@ -26,6 +26,9 @@ const userSchema = mongoose.Schema({
   avatar: {
     type: String,
   },
+  dateOfBirth: {
+    type: String,
+  },
   tokens: [{ type: String }],
 });
 

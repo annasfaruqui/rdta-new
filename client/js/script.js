@@ -20,6 +20,15 @@ const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
 
+const btnMobileNav = document.querySelector(".btn-mobile-nav");
+
+///////////////////////////////////////////////////////////
+// Mobile Navigation
+
+btnMobileNav.addEventListener("click", function () {
+  nav.classList.toggle("nav-open");
+});
+
 ///////////////////////////////////////////////////////////
 // MODAL WINDOW
 
@@ -78,6 +87,8 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     const id = e.target.getAttribute("href");
     if (id === "#") return;
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+
+    if (nav.classList.contains("nav-open")) nav.classList.remove("nav-open");
   }
 });
 
@@ -283,6 +294,7 @@ const slider = function () {
 };
 slider();
 
+///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 const submitCrimeForm = document.querySelector(".crimeForm");
 const inputs = document.querySelectorAll(".crimeForm--input");

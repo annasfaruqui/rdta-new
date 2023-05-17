@@ -63,24 +63,43 @@ btnPending.addEventListener("click", function () {
 ///////////////////////////////////////////////////////////////
 // Accepting and Rejecting cases
 
-const rejectCase = function (e) {
-  const crime_item = e.target.closest(".crimes__pending-list-item");
-  crime_item.remove();
+const rejectCase = async function (e) {
+  const item = e.target.closest(".crimes__pending-list-item");
+  if (item) {
+    const id = item.dataset.id;
+    try {
+      await fetch("http://127.0.0.1:3000/deleteCrime", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ id }),
+      });
+      item.remove();
+    } catch (error) {
+      console.log("ERROR ", error);
+    }
+  }
 };
 
 const acceptCase = async function (e) {
   const item = e.target.closest(".crimes__pending-list-item");
   if (item) {
     const id = item.dataset.id;
-    await fetch("http://127.0.0.1:3000/crimeSolved", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify({ id }),
-    });
-    getCrimesFromAPI();
+    try {
+      await fetch("http://127.0.0.1:3000/crimeSolved", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ id }),
+      });
+      getCrimesFromAPI();
+    } catch (error) {
+      console.log("ERROR ", error);
+    }
   }
 };
 
@@ -117,82 +136,60 @@ let crimes = [];
 const generateCrimeItem = (crime, isPending) => {
   if (isPending)
     return `<li class="crime__solved" data-id="${crime._id}">
-  <table class="solved__table">
-    <colgroup>
-      <col span="1" style="width: 20%" />
-      <col span="1" style="width: 10%" />
-      <col span="1" style="width: 50%" />
-      <col span="1" style="width: 15%" />
-      <col span="1" style="width: 15%" />
-    </colgroup>
-    <thead class="solved__table-thead">
-      <tr>
-        <th colspan="6"></th>
-      </tr>
-    </thead>
-    <tbody class="solved__table-tbody">
-      <tr>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Details</th>
-        <th>Criminal Name</th>
-        <th>Criminal Age</th>
-        <th>People Involved</th>
-      </tr>
-      <tr>
-        <td><p>${crime.suspectedLocation}</p></td>
-        <td>
-          <p>
-           ${new Date(crime.createdAt).toLocaleDateString()}
-          </p>
-        </td>
-        <td>${crime.tip}</td>
-        <td>${crime.criminalName}</td>
-        <td>${crime.criminalAge}</td>
-        <td>${crime.involvedPeople}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table">
+      <div class="table__header"></div>
+
+      <div class="table__items">
+        <h2 class="column__title">Location</h2>
+        <h3 class="column__content">${crime.suspectedLocation}</h3>
+
+        <h2 class="column__title">Date</h2>
+        <h3 class="column__content">${new Date(
+          crime.createdAt
+        ).toLocaleDateString()}</h3>
+
+        <h2 class="column__title">Details</h2>
+        <h3 class="column__content column__tip">${crime.tip}</h3>
+
+        <h2 class="column__title">Criminal Name</h2>
+        <h3 class="column__content">${crime.criminalName}</h3>
+
+        <h2 class="column__title">Criminal Age</h2>
+        <h3 class="column__content">${crime.criminalAge}</h3>
+
+        <h2 class="column__title">People Involved</h2>
+        <h3 class="column__content">${crime.involvedPeople}</h3>
+      </div>
+    </div>
 </li>`;
   else
     return `<li class="crimes__pending-list-item" data-id="${crime._id}">
     <div class="crime__pending">
-    <table class="pending__table">
-      <colgroup>
-      <col span="1" style="width: 20%" />
-      <col span="1" style="width: 10%" />
-      <col span="1" style="width: 50%" />
-      <col span="1" style="width: 15%" />
-      <col span="1" style="width: 15%" />
-      </colgroup>
-      <thead class="pending__table-thead">
-        <tr>
-          <th colspan="6"></th>
-        </tr>
-      </thead>
-      <tbody class="pending__table-tbody">
-      <tr>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Details</th>
-        <th>Criminal Name</th>
-        <th>Criminal Age</th>
-        <th>People Involved</th>
-       </tr>
-      <tr>
-        <td><p>${crime.suspectedLocation}</p></td>
-        <td>
-          <p>
-           ${new Date(crime.createdAt).toLocaleDateString()}
-          </p>
-        </td>
-        <td>${crime.tip}</td>
-        <td>${crime.criminalName}</td>
-       <td>${crime.criminalAge}</td>
-        <td>${crime.involvedPeople}</td>
-      </tr>
-     </tbody>
-    </table>
+    <div class="table">
+      <div class="table__header"></div>
+
+      <div class="table__items">
+        <h2 class="column__title">Location</h2>
+        <h3 class="column__content">${crime.suspectedLocation}</h3>
+
+        <h2 class="column__title">Date</h2>
+        <h3 class="column__content">${new Date(
+          crime.createdAt
+        ).toLocaleDateString()}</h3>
+
+        <h2 class="column__title">Details</h2>
+        <h3 class="column__content column__tip">${crime.tip}</h3>
+
+        <h2 class="column__title">Criminal Name</h2>
+        <h3 class="column__content">${crime.criminalName}</h3>
+
+        <h2 class="column__title">Criminal Age</h2>
+        <h3 class="column__content">${crime.criminalAge}</h3>
+
+        <h2 class="column__title">People Involved</h2>
+        <h3 class="column__content">${crime.involvedPeople}</h3>
+      </div>
+    </div>
    </div>
    <div class="btns__action">
     <button class="btn__accept">Accept</button>

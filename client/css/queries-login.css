@@ -1,0 +1,142 @@
+/* /////////////////////// */
+/* Below 1300px (81.25em)(1300px / 16px = 81.25em) screen size */
+/* /////////////////////// */
+@media (max-width: 81.25em) {
+  .police {
+    padding: 3rem 2rem;
+  }
+
+  .police img {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .column__title,
+  .column__content {
+    padding: 1.4rem 0.4rem;
+  }
+}
+
+/* /////////////////////// */
+/* Below 1000px (81.25em) screen size */
+/* /////////////////////// */
+@media (max-width: 62.5em) {
+  .main__section {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .police {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .police__officer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .list-2 {
+    margin: 0rem;
+  }
+
+  .list-2 ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .btn__police {
+    font-size: 2.2rem;
+    padding: 2rem;
+  }
+
+  .crimes__solved,
+  .crimes__pending {
+    height: auto;
+  }
+}
+
+/* /////////////////////// */
+/* Below 850px (53em) screen size */
+/* /////////////////////// */
+@media (max-width: 53em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .nav__link--btn:link,
+  .nav__link--btn:visited {
+    font-size: 1.9rem;
+    padding: 0.7rem 2.2rem;
+  }
+}
+
+/* /////////////////////// */
+/* Below 660px (41.25em) screen size */
+/* /////////////////////// */
+@media (max-width: 41.25em) {
+  html {
+    font-size: 50%;
+  }
+
+  .police {
+    gap: 2rem;
+  }
+}
+
+/* /////////////////////// */
+/* Below 590px (36.875em) screen size */
+/* /////////////////////// */
+@media (max-width: 36.875em) {
+  html {
+    font-size: 43.75%;
+  }
+
+  .police {
+    padding: 3rem 1rem;
+  }
+
+  .police__officer {
+    gap: 1rem;
+  }
+
+  .police img {
+    margin: 1rem;
+    margin-right: 0;
+  }
+
+  .police__details {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* /////////////////////// */
+/* Below 440px (27.5em) screen size */
+/* /////////////////////// */
+@media (max-width: 27.5em) {
+  html {
+    font-size: 37.5%;
+  }
+
+  .btn__police {
+    font-size: 1.8rem;
+  }
+}
+
+/* /////////////////////// */
+/* Below 360px (22.5em) screen size */
+/* /////////////////////// */
+@media (max-width: 27.5em) {
+  html {
+    font-size: 25%;
+  }
+
+  .btn__police {
+    font-size: 2rem;
+    border-radius: 5px;
+  }
+}

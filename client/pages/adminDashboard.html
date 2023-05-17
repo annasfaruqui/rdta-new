@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/adminDashboard_style.css" />
+    <link rel="stylesheet" href="../css/queries-admin.css" />
 
     <!-- <link rel="stylesheet" href="../sass/main.css" /> -->
 
@@ -52,6 +53,15 @@
             >
           </li>
         </ul>
+
+        <button class="btn-mobile-nav">
+          <svg class="icon-mobile-nav" id="open">
+            <use xlink:href="../imgs/icons.svg#icon-menu"></use>
+          </svg>
+          <svg class="icon-mobile-nav" id="close">
+            <use xlink:href="../imgs/icons.svg#icon-x"></use>
+          </svg>
+        </button>
       </nav>
     </header>
 
@@ -60,34 +70,20 @@
         <div class="section__admin" id="section--1">
           <div class="admin__img-box">
             <img
-              src="https://drive.google.com/uc?export=download&id=1WHSY2ADUNWPBj3IeEHZoPkuC6LQPLeMQ"
+              src="../imgs/person.png"
               alt="Admin Profile Photo"
               class="admin__img"
             />
           </div>
           <h2 class="admin__name">Jason Pimblett</h2>
           <div class="admin">
-            <!-- <div class="admin__details">
-              <div class="admin__icon">
-                <svg>
-                  <use xlink:href="../imgs/icons.svg#icon-check"></use>
-                </svg>
-              </div>
-              <h5 class="admin__detail-value admin__cases-solved">
-                35 cases solved
-              </h5>
-              <h4 class="admin__detail">Cases Solved</h4>
-            </div> -->
-
             <div class="admin__details">
               <div class="admin__icon">
                 <svg>
                   <use xlink:href="../imgs/icons.svg#icon-user"></use>
                 </svg>
               </div>
-              <h5 class="admin__detail-value designation">
-                Super Senior Officer
-              </h5>
+              <h5 class="admin__detail-value designation">Senior Officer</h5>
               <h4 class="admin__detail">Job Title</h4>
             </div>
 
@@ -273,6 +269,7 @@
           />
           <label>Designation</label>
           <select class="adminForm--input" name="designation">
+            <option hidden>Select Officer Designation</option>
             <option value="senior_officer">Senior Officer</option>
             <option value="super_admin">Junior Officer</option>
           </select>
@@ -349,6 +346,7 @@
 
           <label>New Designation</label>
           <select class="adminForm--input adminForm--input--designation">
+            <option hidden>Update Officer Designation</option>
             <option value="senior_officer">Senior Officer</option>
             <option value="super_admin">Junior Officer</option>
           </select>

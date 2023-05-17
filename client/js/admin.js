@@ -10,6 +10,16 @@ const revealCredentials = document.querySelector(".reveal__credentials");
 
 const overlay = document.querySelector(".overlay");
 
+const nav = document.querySelector(".nav");
+const btnMobileNav = document.querySelector(".btn-mobile-nav");
+
+///////////////////////////////////////////////////////////
+// Mobile Navigation
+
+btnMobileNav.addEventListener("click", function () {
+  nav.classList.toggle("nav-open");
+});
+
 // ADMIN MODAL WINDOWS
 const openModalAddUser = function () {
   modalAddUser.classList.remove("hidden");
@@ -86,12 +96,13 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     const id = e.target.getAttribute("href");
     if (id === "#") return;
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+
+    if (nav.classList.contains("nav-open")) nav.classList.remove("nav-open");
   }
 });
 
 //////////////////////////////////////////////////////////
 // MENU FADE ANIMATION
-const nav = document.querySelector(".nav");
 
 const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
@@ -128,7 +139,6 @@ const stickyNav = function (entries) {
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  // rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
 
@@ -351,7 +361,7 @@ if (extraDetailsLC) {
 
   if (extraDetails.solvedCases) {
     const solvedCases = document.querySelector(".total__cases");
-    solvedCases.textContent = `${extraDetails.solvedCases} Solved Cases`;
+    solvedCases.textContent = `${extraDetails.solvedCases} Cases`;
   }
 
   if (extraDetails.totalOfficers) {

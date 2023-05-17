@@ -14,6 +14,7 @@
     />
     <!-- <link rel="stylesheet" href="sass/main.scss" /> -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries-home.css" />
 
     <!-- <link rel="stylesheet" href="sass/main.css" /> -->
 
@@ -30,7 +31,7 @@
         background-position: top;
       "
     >
-      <nav class="nav">
+      <nav class="nav nav-open">
         <img
           src="imgs/img-logo.png"
           alt="Bankist logo"
@@ -48,6 +49,9 @@
             <a class="nav__link" href="#section--3">Criminals</a>
           </li>
           <li class="nav__item">
+            <a class="nav__link" href="#section--4">FAQs</a>
+          </li>
+          <li class="nav__item">
             <a
               class="nav__link"
               href="https://www.legalserviceindia.com/legal/article-2839-drug-trafficking-in-india.html"
@@ -61,6 +65,15 @@
             >
           </li>
         </ul>
+
+        <button class="btn-mobile-nav">
+          <svg class="icon-mobile-nav" id="open">
+            <use xlink:href="imgs/icons.svg#icon-menu"></use>
+          </svg>
+          <svg class="icon-mobile-nav" id="close">
+            <use xlink:href="imgs/icons.svg#icon-x"></use>
+          </svg>
+        </button>
       </nav>
 
       <div class="emergency">
@@ -379,6 +392,43 @@
         <button class="slider__btn slider__btn--left">&larr;</button>
         <button class="slider__btn slider__btn--right">&rarr;</button>
         <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section section--faq" id="section--4">
+      <div class="section__title section__title--faq">
+        <h2 class="section__description">Frequently Asked Questions</h2>
+        <h3 class="section__header">How can we help you?</h3>
+      </div>
+
+      <div class="faq">
+        <div class="faq-1">
+          <p class="faq--ques">Is my identity truly 100 percent anonymous?</p>
+          <p class="faq--ans">
+            At Anti-Drug Peddling, we stick by our rules and regulation, the
+            same goes with the fact about identity of the reporter.
+          </p>
+        </div>
+
+        <div class="faq-2">
+          <p class="faq--ques">How exactly is my identity anonymous?</p>
+          <p class="faq--ans">
+            We don't log any form of data that can be used to trace back to your
+            personal information. We flush any kind of device identification
+            instantly just as you submit the report.
+          </p>
+        </div>
+
+        <div class="faq-3">
+          <p class="faq--ques">
+            What if I don't mind getting my identity revealed, and I want to
+            convey my report to the officials ASAP.
+          </p>
+          <p class="faq--ans faq--ans--last">
+            You can always call the National Toll Free Number: +91-11-26761000
+            OR +91-11-26761144 OR +91-11-26761105
+          </p>
+        </div>
       </div>
     </section>
 

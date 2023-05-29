@@ -24,6 +24,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   font-family: Noto Sans, sans-serif;
   font-weight: 400;
   line-height: 1.9;
+  overflow-x: hidden;
 }
 
 .section {
@@ -183,6 +185,31 @@ img {
   background-color: var(--color-primary-lighter);
   color: #fff;
   box-shadow: 0 1rem 5rem #00006433;
+}
+
+.btn-mobile-nav {
+  z-index: 10000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+}
+
+.icon-mobile-nav {
+  background-color: var(--color-primary);
+  height: 9rem;
+  width: 9rem;
+  fill: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.icon-mobile-nav#close {
+  display: none;
 }
 
 .header {
@@ -688,12 +715,14 @@ h4 {
   font-size: 1.7rem;
 }
 
-.textarea {
+.modal__form textarea {
   width: 100%;
+  resize: none;
   border: 1px solid #ddd;
-  border-radius: .5rem;
   padding: 1rem 1.5rem;
+  font-family: inherit;
   font-size: 1.7rem;
+  overflow: auto;
 }
 
 .modal__form button {
@@ -726,6 +755,46 @@ h4 {
   font-size: 1.5rem;
   font-weight: 400;
   display: flex;
+}
+
+.faq {
+  max-height: 100rem;
+  max-width: 68%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  letter-spacing: .5px;
+  background-color: #eee;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin: 5rem auto;
+  padding: 2rem 6rem;
+  box-shadow: 2px 2px 10px #08071099;
+}
+
+.faq:first-child {
+  margin-top: 1rem;
+}
+
+.faq-1, .faq-2 {
+  border-bottom: 1px solid #aaa;
+}
+
+.faq--ques {
+  color: #555;
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.faq--ans {
+  color: #aaa;
+  margin-bottom: 5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.faq--ans--last {
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=index.b2625c6b.css.map */

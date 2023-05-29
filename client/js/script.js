@@ -311,17 +311,19 @@ const clearSubmitFormInputs = () => {
 
 submitCrimeForm.addEventListener("submit", e => {
   e.preventDefault();
-  let reqObj = {};
-  inputs.forEach(input => {
-    reqObj[input.name] = input.value;
-  });
-  console.log(reqObj);
+  const formData = new FormData(submitCrimeForm);
+  // let reqObj = {};
+  // inputs.forEach(input => {
+  //   reqObj[input.name] = input.value;
+  // });
+  // console.log(reqObj);
   fetch("http://127.0.0.1:3000/reportCrime", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(reqObj),
+    // headers: {
+    //   "Content-Type": "application/json",
+    // },
+    // body: JSON.stringify(reqObj),
+    body: formData,
   })
     .then(response => {
       if (!response.ok) {

@@ -14,6 +14,12 @@ const nav = document.querySelector(".nav");
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
+const btnMobileNav = document.querySelector(".btn-mobile-nav");
+///////////////////////////////////////////////////////////
+// Mobile Navigation
+btnMobileNav.addEventListener("click", function() {
+    nav.classList.toggle("nav-open");
+});
 ///////////////////////////////////////////////////////////
 // MODAL WINDOW
 const openModalLogin = function(e) {
@@ -30,12 +36,14 @@ const closeModal = function() {
     modalLogin.classList.add("hidden");
     modalReport.classList.add("hidden");
     overlay.classList.add("hidden");
+    clearLoginFormInputs();
+    clearSubmitFormInputs();
 };
 btnOpenModalLogin.addEventListener("click", openModalLogin);
 btnsOpenModalReport.forEach((btn)=>btn.addEventListener("click", openModalReport));
 btnsCloseModal.forEach((btn)=>btn.addEventListener("click", closeModal));
-overlay.addEventListener("click", closeModal);
 btnsCancel.forEach((btn)=>btn.addEventListener("click", closeModal));
+overlay.addEventListener("click", closeModal);
 document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") closeModal();
 });
@@ -49,14 +57,17 @@ btnScrollTo.addEventListener("click", function(e) {
 //////////////////////////////////////////////////////////
 // PAGE NAVIGATION (SMOOTH SCROLL)
 document.querySelector(".nav__links").addEventListener("click", function(e) {
-    e.preventDefault();
-    // Matching strategy
-    if (e.target.classList.contains("nav__link")) {
-        const id = e.target.getAttribute("href");
-        if (id === "#") return;
-        document.querySelector(id).scrollIntoView({
-            behavior: "smooth"
-        });
+    if (e.target.classList.contains("nav__link") && !e.target.classList.contains("external__link")) {
+        e.preventDefault();
+        // Matching strategy
+        if (e.target.classList.contains("nav__link")) {
+            const id = e.target.getAttribute("href");
+            if (id === "#") return;
+            document.querySelector(id).scrollIntoView({
+                behavior: "smooth"
+            });
+            if (nav.classList.contains("nav-open")) nav.classList.remove("nav-open");
+        }
     }
 });
 //////////////////////////////////////////////////////////
@@ -200,24 +211,33 @@ const slider = function() {
 };
 slider();
 ///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 const submitCrimeForm = document.querySelector(".crimeForm");
 const inputs = document.querySelectorAll(".crimeForm--input");
+const clearSubmitFormInputs = ()=>{
+    inputs.forEach((input)=>{
+        input.value = "";
+    });
+};
 submitCrimeForm.addEventListener("submit", (e)=>{
     e.preventDefault();
-    let reqObj = {};
-    inputs.forEach((input)=>{
-        reqObj[input.name] = input.value;
-    });
-    console.log(reqObj);
+    const formData = new FormData(submitCrimeForm);
+    // let reqObj = {};
+    // inputs.forEach(input => {
+    //   reqObj[input.name] = input.value;
+    // });
+    // console.log(reqObj);
     fetch("http://127.0.0.1:3000/reportCrime", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(reqObj)
+        // headers: {
+        //   "Content-Type": "application/json",
+        // },
+        // body: JSON.stringify(reqObj),
+        body: formData
     }).then((response)=>{
         if (!response.ok) alert("Something went wrong");
-        else alert("Crime reported");
+        else // clearSubmitFormInputs();
+        alert("Crime reported");
     }).catch(()=>{
         alert("Something went wrong");
     });
@@ -225,6 +245,11 @@ submitCrimeForm.addEventListener("submit", (e)=>{
 ////////////////LOGIN FORM///////////////////////
 const loginForm = document.querySelector(".loginForm");
 const loginFormInputs = document.querySelectorAll(".loginForm--input");
+const clearLoginFormInputs = ()=>{
+    loginFormInputs.forEach((input)=>{
+        input.value = "";
+    });
+};
 loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     let reqObj = {};
@@ -242,9 +267,13 @@ loginForm.addEventListener("submit", (e)=>{
     }).then((data)=>{
         console.log("DATA", data);
         if (!data.success) return alert(data?.message);
-        window.open("http://127.0.0.1:5500/client/pages/login.html");
+        if (data?.user?.designation === "super_admin") window.open("http://127.0.0.1:5500/client/pages/login.html");
+        else window.open("http://127.0.0.1:5500/client/pages/adminDashboard.html");
         localStorage.setItem("user", JSON.stringify(data?.user));
         localStorage.setItem("authToken", JSON.stringify(data?.token));
+        localStorage.setItem("extraDetails", JSON.stringify(data?.extraDetails));
+        // clear form fields
+        clearLoginFormInputs();
     }).catch((error)=>{
         console.log(error);
     });

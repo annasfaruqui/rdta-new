@@ -27,6 +27,9 @@ const crimeSchema = mongoose.Schema(
     imageUrl: {
       type: String,
     },
+    images: {
+      type: [String],
+    },
   },
   {
     timestamps: true,

@@ -18,6 +18,7 @@ const addSuperAdmin = async () => {
       userName: "annas",
       password: "Password",
       designation: "super_admin",
+      dateOfBirth: "06/08/2001",
     });
     await user.save();
   } catch (error) {

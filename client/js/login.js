@@ -134,6 +134,18 @@ logout.addEventListener("click", () => {
 ////////////////////FILLING CRIMES/////////////////////////////
 let crimes = [];
 const generateCrimeItem = (crime, isPending) => {
+  const generateActions = imagesAvailable => {
+    if (imagesAvailable) {
+      return `<button class="btn__accept">Accept</button>
+      <button class="btn__reject">Reject</button>
+      <button class="btn__show-images">Images</button>
+      `;
+    } else {
+      return `<button class="btn__accept">Accept</button>
+      <button class="btn__reject">Reject</button>`;
+    }
+  };
+
   if (isPending)
     return `<li class="crime__solved" data-id="${crime._id}">
   <div class="table">
@@ -192,8 +204,7 @@ const generateCrimeItem = (crime, isPending) => {
     </div>
    </div>
    <div class="btns__action">
-    <button class="btn__accept">Accept</button>
-    <button class="btn__reject">Reject</button>
+    ${generateActions(Array.isArray(crime.images) && crime.images.length > 0)}
    </div>
   </li>`;
 };
@@ -218,6 +229,9 @@ const fillCrimes = () => {
 
   const btnAccept = document.querySelectorAll(".btn__accept");
   const btnReject = document.querySelectorAll(".btn__reject");
+  const showImagesBtn = document.querySelectorAll(".btn__show-images");
+
+  showImagesBtn.forEach(btn => btn.addEventListener("click", openImageModal));
 
   btnAccept.forEach(btn => btn.addEventListener("click", acceptCase));
 
@@ -239,3 +253,62 @@ const getCrimesFromAPI = async () => {
 };
 
 getCrimesFromAPI();
+
+// CRIME IMAGES
+const crimeImages = document.querySelector(".crime_images");
+const crimeOverlay = document.querySelector(".login__overlay");
+const crimeModal = document.querySelector(".login__modal");
+
+crimeOverlay.addEventListener("click", e => {
+  closeImageModal();
+});
+
+const openImageModal = async e => {
+  const item = e.target.closest(".crimes__pending-list-item");
+
+  if (item) {
+    const id = item.dataset.id;
+    const crime = crimes.find(crime => crime._id === id);
+    if (!crime) return;
+    const images = crime.images;
+    if (!images || !Array.isArray(images) || images.length === 0) return;
+    try {
+      crimeImages.innerHTML = "";
+      for (let imagePath of images) {
+        const html = generateImageItem(
+          `http://127.0.0.1:3000/image/${imagePath}`
+        );
+        crimeImages.insertAdjacentHTML("beforeend", html);
+      }
+      // getCrimesFromAPI();
+    } catch (error) {
+      console.log("ERROR ", error);
+    }
+  }
+
+  crimeOverlay.classList.remove("hidden");
+  crimeModal.classList.remove("hidden");
+};
+
+const closeImageModal = () => {
+  crimeOverlay.classList.add("hidden");
+  crimeModal.classList.add("hidden");
+};
+
+const generateImageItem = src => {
+  return `
+  <a 
+  href="${src}"
+  target="_blank"
+  a>
+  <img
+    src="${src}"
+    class="crime__images--image"
+  />
+    </a>`;
+};
+
+const fillImages = (images, id) => {
+  if (Array.isArray(images) && images.length > 0) {
+  }
+};

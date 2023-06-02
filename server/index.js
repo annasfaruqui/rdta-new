@@ -27,7 +27,8 @@ import generalCrimeRouter from "./router/general/crime.js";
 app.use(generalCrimeRouter);
 
 // // API endpoint for fetching an image
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = process.env.npm_config_local_prefix;
 app.get("/image/:filename", (req, res) => {
   try {
     const { filename } = req.params;

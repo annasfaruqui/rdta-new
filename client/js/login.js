@@ -171,7 +171,21 @@ const generateCrimeItem = (crime, isPending) => {
 
         <h2 class="column__title">People Involved</h2>
         <h3 class="column__content">${crime.involvedPeople}</h3>
+
+        ${
+          Array.isArray(crime.images) && crime.images.length > 0
+            ? `<h2 class="column__title">Images</h2>
+        <h3 class="column__content">
+        <button class="btn__show-images">Images</button>
+        </h3>`
+            : `<h2 class="column__title">Images</h2>
+            <h3 class="column__content">
+            No Image
+            </h3>`
+        }
+        
       </div>
+      
     </div>
 </li>`;
   else
@@ -264,11 +278,14 @@ crimeOverlay.addEventListener("click", e => {
 });
 
 const openImageModal = async e => {
-  const item = e.target.closest(".crimes__pending-list-item");
+  const item =
+    e.target.closest(".crimes__pending-list-item") ||
+    e.target.closest(".crime__solved");
 
   if (item) {
     const id = item.dataset.id;
     const crime = crimes.find(crime => crime._id === id);
+    console.log(crime, id);
     if (!crime) return;
     const images = crime.images;
     if (!images || !Array.isArray(images) || images.length === 0) return;

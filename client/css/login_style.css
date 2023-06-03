@@ -247,7 +247,7 @@
 }
 
 .btn__show-images {
-  background-color: yellowgreen;
+  background-color: var(--color-primary-lighter);
 }
 
 /* //MODAL/ */
